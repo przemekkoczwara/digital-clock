@@ -20,25 +20,37 @@
   <body>
     <!-- clock -->
     <div class="clock" id="clock">
-      <span class="time-part" id="hr">00</span><span class="time-space">:</span>
-      <span class="time-part" id="min">00</span><span class="time-space">:</span>
+      <span class="time-part" id="hr">00</span
+      ><span class="time-space">:</span>
+      <span class="time-part" id="min">00</span
+      ><span class="time-space">:</span>
       <span class="time-part" id="sec">00</span>
     </div>
 
     <!-- current date -->
-    <div class="date" id="date">Current date</div>
+    <div class="date-group">
+      <div class="date" id="date">Current date</div>
+      <div class="date date-name" id="dateName">Current date</div>
+    </div>
 
     <!-- control buttons  -->
     <div class="control-buttons">
       <!-- timer -->
-      <button class="btn" id="timer-btn">Timer</button>
+      <button class="btn timer-btn" id="timer-btn">Timer</button>
 
       <!-- stoper -->
-      <button class="btn" id="start-stoper">Start</button>
-      <button class="btn" id="reset-stoper">Reset</button>
+      <button class="btn" id="start-timer">Start</button>
+      <button class="btn" id="stop-timer">Stop</button>
+      <button class="btn" id="reset-timer">Reset</button>
 
       <!-- dark mode -->
-      <button class="btn material-symbols-outlined" id="dark-mode" aria-lebel="Toogle Dark Mode">brightness_3</button>
+      <button
+        class="btn material-symbols-outlined"
+        id="dark-mode"
+        aria-lebel="Toogle Dark Mode"
+      >
+        brightness_3
+      </button>
     </div>
     <script type="module" src="./src/main.js"></script>
   </body>

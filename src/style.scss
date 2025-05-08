@@ -1,3 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+html,
 body {
-  background-color: rgb(33, 153, 141);
+  font-family: 'Audiowide', sans-serif;
+  font-weight: 400px;
+  font-style: normal;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #00c3ff, #6a00f4);
+}
+
+.clock {
+  font-size: 135px;
+  width: 850px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  border-radius: 20px;
+}
+
+.time-part {
+  display: inline-block;
+  width: 200px; /* lub dopasuj: 110–130px */
+  text-align: center;
+}
+
+.time-space {
+  margin: 0 10px; /* symetryczne odstępy */
+}
+
+.date-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.date-name {
+  font-size: 24px;
+  color: #fff;
+}
+
+.timer-controls {
+  display: none;
+}
+.control-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  border-radius: 40px;
+  padding: 20px;
+}
+.timer-controls {
+  display: none;
+}
+
+.btn {
+  font-size: 33px;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+.btn:hover {
+  cursor: pointer;
 }
