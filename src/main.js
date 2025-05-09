@@ -4,6 +4,8 @@ import './style.scss';
 
 if (localStorage.getItem('dark-mode') === 'enabled') {
   document.body.classList.add('dark-mode');
+} else {
+  document.body.classList.remove('dark-mode');
 }
 
 // currrent Time
@@ -102,10 +104,10 @@ buttons.forEach(function (button) {
     } else if (btnId === 'stop-timer') {
       console.log('Timer stop');
       clockInterval = setInterval(updateClock, 10000);
-      clearInterval(coutdownInverval);
+      clearInterval(coutdownInterval);
     } else if (btnId === 'reset-timer') {
       console.log('Timer reset');
-      clearInterval(coutdownInverval);
+      clearInterval(coutdownInterval);
       remainingTime = 20 * 60;
 
       document.querySelector('#hr').innerHTML = '00';
@@ -128,9 +130,6 @@ buttons.forEach(function (button) {
 
 function timerMode() {
   clearInterval(clockInterval);
-  const hrElement = document.querySelector('#hr');
-  const minElement = document.querySelector('#min');
-  const secElement = document.querySelector('#sec');
 
   hrElement.innerHTML = '00';
   minElement.innerHTML = '20';
@@ -139,11 +138,11 @@ function timerMode() {
 
 // timer start
 
-let coutdownInverval;
+let coutdownInterval;
 let remainingTime = 20 * 60; // 20 minut = 1200 sekund
 
 function runTimerCountdown() {
-  clearInterval(coutdownInverval);
+  clearInterval(coutdownInterval);
 
   // 👇 1. NATYCHMIAST POKAŻ CZAS
   const hours = Math.floor(remainingTime / 3600);
@@ -159,11 +158,11 @@ function runTimerCountdown() {
     .padStart(2, '0');
 
   // 👇 2. A DOPIERO POTEM ODLICZAJ
-  coutdownInverval = setInterval(function () {
+  coutdownInterval = setInterval(function () {
     remainingTime--;
 
     if (remainingTime < 0) {
-      clearInterval(coutdownInverval);
+      clearInterval(coutdownInterval);
       console.log('Time End');
       return;
     }

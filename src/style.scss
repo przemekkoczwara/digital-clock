@@ -1,3 +1,23 @@
+:root {
+  --font-size: 16px; // main -font 
+
+  --size-xs: 0.625rem; // 10px
+  --size-s: 1.25rem; //20px
+  --size-m: 1.5rem; //24px
+  --size-l: 2.5rem; // 40px
+  --size-xl: 8.25rem; //130px
+  --size-xxl: 54.375rem; //870px
+
+  --color-primary: #00c3ff;
+  --color-secondary: #6a00f4;
+  --color-hover: #4d9cb4;
+  --color-text-light: #ffffff;
+  --color-text-dar: #1d1c1c;
+  --color-green: #55d523;
+  --color-shadow: #31334d;
+  --color-shadow-light: #aaadcb;
+}
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -7,22 +27,26 @@
 html,
 body {
   font-family: 'Audiowide', sans-serif;
-  font-weight: 400px;
+  font-weight: 400;
   font-style: normal;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom right, #00c3ff, #6a00f4);
+  background: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
 }
 
 .clock {
-  font-size: 130px;
-  width: 870px;
+  font-size: var(--size-xl);
+  width: var(--size-xxl);
   display: flex;
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-  border-radius: 20px;
+  box-shadow: 8px 8px 24px 0px var(--color-shadow);
+  border-radius: 1.25rem;
 }
 #hr,
 #min,
@@ -39,63 +63,60 @@ body {
 }
 
 .date {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: var(--size-s);
+  margin-bottom: var(--size-s);
 }
 .date-name {
-  font-size: 24px;
-  color: #fff;
+  font-size: var(--size-m);
+  color: var(--color-text-light);
 }
 
-.timer-controls {
-  display: none;
-}
 .control-buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 8px 8px 24px 10px rgb(64, 66, 92);
-  border-radius: 40px;
-  padding: 20px;
+  box-shadow: 8px 8px 24px 10px var(--color-shadow);
+  border-radius: 2.5rem; // 40px
+  padding: 1.25rem; // 20px
   opacity: 0.6;
 }
 
 .btn {
-  font-size: 20px;
-  color: #090a0a;
-  border-radius: 20px;
+  font-size: 1.25rem;
+  color: var(--color-text-dar);
+  border-radius: 1.25rem;
   border: 1px solid #c2bcca;
-  padding: 10px 20px;
-  margin-bottom: 20px;
+  padding: var(--size-xs) var(--size-s);
+  margin-bottom: var(--size-s);
   background-color: transparent;
 }
 .btn:hover {
   cursor: pointer;
-  color: #fff;
+  color: var(--color-text-light);
 }
 
-// dark-mode 
+// dark-mode
 
 body.dark-mode {
-  background: rgb(29, 28, 28);
-  color: #55d523;
+  background: var(--color-text-dar);
+  color: var(--color-green);
 }
 body.dark-mode .clock {
-  box-shadow: 8px 8px 24px 0px rgb(170, 173, 203);
+  box-shadow: 8px 8px 24px 0px var(--color-shadow-light);
 }
 
 body.dark-mode .control-buttons {
-  box-shadow: 8px 8px 24px 0px rgb(170, 173, 203);
+  box-shadow: 8px 8px 24px 0px var(--color-shadow-light);
 }
 
 body.dark-mode .btn {
-  color: white;
-  font-size: 20px;
-  border: 1px solid #55d523;
+  color: var(--color-text-light);
+  font-size: var(--size-s);
+  border: 1px solid var(--color-green);
 }
 
 body.dark-mode .btn:hover {
-  color: #55d523;
+  color: var(--color-green);
   background-color: transparent;
 }
