@@ -95,8 +95,15 @@ buttons.forEach(function (button) {
       runTimerCountdown();
     } else if (btnId === 'stop-timer') {
       console.log('Timer stop');
+      clearInterval(coutdownInverval);
     } else if (btnId === 'reset-timer') {
       console.log('Timer reset');
+      clearInterval(coutdownInverval);
+      remainingTime = 20 * 60;
+
+      document.querySelector('#hr').innerHTML = '00';
+      document.querySelector('#min').innerHTML = '20';
+      document.querySelector('#sec').innerHTML = '00';
     } else if (btnId === 'dark-mode') {
       console.log('Dark mode');
     }
@@ -119,10 +126,9 @@ function timerMode() {
 // timer start
 
 let coutdownInverval;
+let remainingTime = 20 * 60; // 20 minut = 1200 sekund
 
 function runTimerCountdown() {
-  let remainingTime = 20 * 60; // 20 minut = 1200 sekund
-
   clearInterval(coutdownInverval);
 
   // 👇 1. NATYCHMIAST POKAŻ CZAS
