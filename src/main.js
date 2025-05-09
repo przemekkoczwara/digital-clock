@@ -88,14 +88,15 @@ buttons.forEach(function (button) {
     const btnId = event.target.id;
 
     if (btnId === 'timer-btn') {
-      console.log('Timer ustawiony');
+      console.log('Timer active');
       timerMode();
     } else if (btnId === 'start-timer') {
-      console.log('Timer włączony');
+      console.log('Timer run');
+      runTimerCountdown();
     } else if (btnId === 'stop-timer') {
-      console.log('Timer wyłączony');
+      console.log('Timer stop');
     } else if (btnId === 'reset-timer') {
-      console.log('Timer zresetowany');
+      console.log('Timer reset');
     } else if (btnId === 'dark-mode') {
       console.log('Dark mode');
     }
@@ -120,11 +121,43 @@ function timerMode() {
 let coutdownInverval;
 
 function runTimerCountdown() {
-  let remainingTime = 20 * 60;
+  let remainingTime = 20 * 60; // 20 minut = 1200 sekund
 
-  clearInterval = coutdownInverval;
+  clearInterval(coutdownInverval);
 
-  coutdownInverval = setInterval(function () {});
+  // 👇 1. NATYCHMIAST POKAŻ CZAS
+  const hours = Math.floor(remainingTime / 3600);
+  const minutes = Math.floor((remainingTime % 3600) / 60);
+  const seconds = remainingTime % 60;
+
+  document.querySelector('#hr').innerHTML = hours.toString().padStart(2, '0');
+  document.querySelector('#min').innerHTML = minutes
+    .toString()
+    .padStart(2, '0');
+  document.querySelector('#sec').innerHTML = seconds
+    .toString()
+    .padStart(2, '0');
+
+  // 👇 2. A DOPIERO POTEM ODLICZAJ
+  coutdownInverval = setInterval(function () {
+    remainingTime--;
+
+    if (remainingTime < 0) {
+      clearInterval(coutdownInverval);
+      console.log('Time End');
+      return;
+    }
+
+    const hours = Math.floor(remainingTime / 3600);
+    const minutes = Math.floor((remainingTime % 3600) / 60);
+    const seconds = remainingTime % 60;
+
+    document.querySelector('#hr').innerHTML = hours.toString().padStart(2, '0');
+    document.querySelector('#min').innerHTML = minutes
+      .toString()
+      .padStart(2, '0');
+    document.querySelector('#sec').innerHTML = seconds
+      .toString()
+      .padStart(2, '0');
+  }, 1000);
 }
-
-// to be continue

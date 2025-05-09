@@ -18,21 +18,22 @@ body {
 }
 
 .clock {
-  font-size: 135px;
-  width: 850px;
-  padding: 20px;
+  font-size: 130px;
+  width: 870px;
   display: flex;
-  justify-content: center;
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   border-radius: 20px;
 }
-
-.time-part {
+#hr,
+#min,
+#sec {
   display: inline-block;
-  width: 200px; /* lub dopasuj: 110–130px */
+  width: 2ch; /* 2 znaki – np. "00", "59" */
   text-align: center;
+  font-variant-numeric: tabular-nums; /* sprawia, że każda cyfra zajmuje tyle samo miejsca */
 }
 
+ 
 .time-space {
   margin: 0 10px; /* symetryczne odstępy */
 }
