@@ -1,5 +1,11 @@
 import './style.scss';
 
+// local storage - save dark-mode
+
+if (localStorage.getItem('dark-mode') === 'enabled') {
+  document.body.classList.add('dark-mode');
+}
+
 // currrent Time
 
 const hrElement = document.querySelector('#hr');
@@ -95,6 +101,7 @@ buttons.forEach(function (button) {
       runTimerCountdown();
     } else if (btnId === 'stop-timer') {
       console.log('Timer stop');
+      clockInterval = setInterval(updateClock, 10000);
       clearInterval(coutdownInverval);
     } else if (btnId === 'reset-timer') {
       console.log('Timer reset');
@@ -106,6 +113,13 @@ buttons.forEach(function (button) {
       document.querySelector('#sec').innerHTML = '00';
     } else if (btnId === 'dark-mode') {
       console.log('Dark mode');
+      document.body.classList.toggle('dark-mode');
+
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+      } else {
+        localStorage.setItem('dark-mode', 'disabled');
+      }
     }
   });
 });

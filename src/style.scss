@@ -33,11 +33,6 @@ body {
   font-variant-numeric: tabular-nums; /* sprawia, że każda cyfra zajmuje tyle samo miejsca */
 }
 
- 
-.time-space {
-  margin: 0 10px; /* symetryczne odstępy */
-}
-
 .date-group {
   display: flex;
   flex-direction: column;
@@ -60,21 +55,47 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 10px rgb(64, 66, 92);
   border-radius: 40px;
   padding: 20px;
-}
-.timer-controls {
-  display: none;
+  opacity: 0.6;
 }
 
 .btn {
-  font-size: 33px;
+  font-size: 20px;
+  color: #090a0a;
   border-radius: 20px;
+  border: 1px solid #c2bcca;
   padding: 10px 20px;
   margin-bottom: 20px;
   background-color: transparent;
 }
 .btn:hover {
   cursor: pointer;
+  color: #fff;
+}
+
+// dark-mode 
+
+body.dark-mode {
+  background: rgb(29, 28, 28);
+  color: #55d523;
+}
+body.dark-mode .clock {
+  box-shadow: 8px 8px 24px 0px rgb(170, 173, 203);
+}
+
+body.dark-mode .control-buttons {
+  box-shadow: 8px 8px 24px 0px rgb(170, 173, 203);
+}
+
+body.dark-mode .btn {
+  color: white;
+  font-size: 20px;
+  border: 1px solid #55d523;
+}
+
+body.dark-mode .btn:hover {
+  color: #55d523;
+  background-color: transparent;
 }
