@@ -43,3 +43,8 @@ A simple digital clock with a timer feature and dark mode functionality, built u
 - **CSS/SCSS:** For styling and layout.
 - **JavaScript:** For clock and timer functionality, dark mode toggle, and local storage.
 
+## Screen shots
+![image](https://github.com/user-attachments/assets/ea45db19-0b7e-44d9-8aec-645c4300664a)
+![image](https://github.com/user-attachments/assets/17682e3d-0d77-423d-a8e1-3efb3bbd1393)
+
+
